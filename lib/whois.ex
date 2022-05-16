@@ -67,9 +67,9 @@ defmodule Whois do
       |> String.downcase()
       |> case do
         "whois server:" <> host -> String.trim(host)
-            |> Regex.replace(~r/^[a-z0-9-\.]*/,'') 
+            Regex.replace(~r/^[a-z0-9-\.]*/,host,'') 
         "registrar whois server:" <> host -> String.trim(host)
-            |> Regex.replace(~r/^[a-z0-9-\.]*/,'')
+            Regex.replace(~r/^[a-z0-9-\.]*/,host,'')
         _ -> nil
       end
     end)
